@@ -65,6 +65,7 @@ public class UserService {
         user.setLastName(registerRequest.getLastName());
         user.setCitNumber(registerRequest.getCitNumber());
         user.setPassword(encodedPassword);
+        user.setBuiltIn(true);
 
         user.setRoles(roles);
 
