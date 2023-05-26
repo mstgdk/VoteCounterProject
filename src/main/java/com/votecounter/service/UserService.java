@@ -7,6 +7,7 @@ import com.votecounter.dto.request.RegisterRequest;
 import com.votecounter.exception.ConflictException;
 import com.votecounter.exception.message.ErrorMessage;
 import com.votecounter.repository.UserRepository;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.votecounter.exception.ResourceNotFoundException;
@@ -25,7 +26,7 @@ public class UserService {
 
     //@Lazy PasswordEncoder: başına @Lazy ekleyerek sonsuz döngüden kurtardık.
 
-    public UserService(UserRepository userRepository, RoleService roleService, PasswordEncoder passwordEncoder) {
+    public UserService(UserRepository userRepository, RoleService roleService, @Lazy PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.roleService = roleService;
         this.passwordEncoder = passwordEncoder;
@@ -50,7 +51,7 @@ public class UserService {
             );
         }
 
-        // !!! yeni kullanıcın rol bilgisini default olarak customer atıyorum
+        // !!! yeni kullanıcın rol bilgisini default olarak admin atıyorum
         Role role = roleService.findByType(RoleType.ROLE_ADMIN);
         Set<Role> roles = new HashSet<>();
         roles.add(role);

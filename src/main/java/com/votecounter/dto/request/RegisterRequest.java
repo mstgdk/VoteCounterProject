@@ -23,8 +23,8 @@ public class RegisterRequest {
     @NotBlank(message="Please provide your Last Name")
     private String lastName;
 
-    @Size(min=5 ,max=80)
-    @Email(message = "Please provide valid e-mail")
+    @Size(min=11 ,max=11)
+    @NotBlank(message="Please provide your Last Name")
     private String citNumber;
 
     @Size(min=4 , max=20, message="Please provide Correct Size of Password")
