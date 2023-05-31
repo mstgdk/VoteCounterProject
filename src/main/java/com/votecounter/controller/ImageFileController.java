@@ -1,15 +1,19 @@
 package com.votecounter.controller;
 
+import com.votecounter.domain.ImageFile;
+import com.votecounter.dto.response.ImageFileResponse;
 import com.votecounter.dto.response.ImageSavedResponse;
 import com.votecounter.dto.response.ResponseMessage;
 import com.votecounter.service.ImageFileService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/files")
@@ -33,5 +37,34 @@ public class ImageFileController {
         ImageSavedResponse response =
                 new ImageSavedResponse(imageId, ResponseMessage.IMAGE_SAVED_RESPONSE_MESSAGE, true);
         return ResponseEntity.ok(response);
+    }
+    @GetMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<List<ImageFileResponse>> getAllImages(){
+        List<ImageFileResponse> allImageDTO = imageFileService.getAllImages();
+
+        return ResponseEntity.ok(allImageDTO);
+    }
+    //DOWNLOAD
+    @GetMapping("/download/{id}")
+    public ResponseEntity<byte[]> downloadFile(@PathVariable String id){//byte arraylar zaten fotoğraflarımdır. Bu yüzden dönen  byte[] olmalı
+        ImageFile imageFile= imageFileService.getImageById(id); // Tüm çağırmaları ImageFile üzerinden yaptığımız için ImageFile gelecek
+
+        return ResponseEntity.ok().header(//body de ne göndereceksem onları header a koyarım
+                HttpHeaders.CONTENT_DISPOSITION,
+                "attachment;filename=" + imageFile.getName()).//indirirken DB'ki isim otomatik gelir. Aksi durumda indirirken biz dosya ismini belirtmemizz gerekir
+                body(imageFile.getImageData().getData());
+    }
+    //Image DISPLAY
+    @GetMapping("/display/{id}")
+    public ResponseEntity<byte[]> displayFile(@PathVariable String id){
+        ImageFile imageFile= imageFileService.getImageById(id);
+
+        HttpHeaders header = new HttpHeaders();
+        header.setContentType(MediaType.IMAGE_PNG);
+
+        return new ResponseEntity<>(imageFile.getImageData().getData(),
+                header,
+                HttpStatus.OK);
     }
 }

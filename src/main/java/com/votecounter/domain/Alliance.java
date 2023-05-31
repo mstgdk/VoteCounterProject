@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,18 +15,17 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Party {
+public class Alliance {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 30,nullable = false, unique = true)
-    private String partyName;
+    @NotBlank(message = "This part cant be empty..")
+    @Column(unique = true)
+    private String AllianceName;
 
-
-    @OneToMany(orphanRemoval = true)
-    @JoinColumn(name="party_id")
-    private List<ImageFile> image;
-
-
+    @OneToMany
+    @JoinColumn(name = "alliance_Id", referencedColumnName = "id")
+    private Set<Party>partyList;
 }
