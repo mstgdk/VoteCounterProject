@@ -71,4 +71,9 @@ public class ImageFileService {
 
         return imageFileDTOS;
     }
+
+    public ImageFile findImageByPartyId(Long id) {
+        ImageFile imageFile = imageFileRepository.findImageByPartyId(id);
+        return imageFile;
+    }
 }

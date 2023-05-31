@@ -37,10 +37,16 @@ public class PartyController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    //get a party by ID
+    //get a party by ID (without Image)
     @GetMapping("/{id}")
     public ResponseEntity<PartyResponse> getParty(@PathVariable Long id){
         PartyResponse party = partyService.getParty(id);
+        return ResponseEntity.ok(party);
+    }
+    //get a party by ID (with Image)
+    @GetMapping("/partywithimage/{id}")
+    public ResponseEntity<PartyResponse> getPartyAndImage(@PathVariable Long id){
+        PartyResponse party = partyService.getPartyAndImage(id);
         return ResponseEntity.ok(party);
     }
 

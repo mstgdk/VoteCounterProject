@@ -82,6 +82,22 @@ public class PartyService {
                  return DTOParty;
     }
 
-    //findById==>> asistant method
+    public PartyResponse getPartyAndImage(Long id) {
+        Party pojoParty = partyRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException(
+                        String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
+
+        // Image File
+        ImageFile imageFile = imageFileService.findImageByPartyId(id);
+        List<String> imFiles = new ArrayList<>();
+        imFiles.add(imageFile.getId());
+        //------------
+        PartyResponse dtoParty = new PartyResponse();
+        dtoParty.setPartyName(pojoParty.getPartyName());
+        dtoParty.setImage(imFiles);
+        return dtoParty;
+    }
+
+
 
 }
