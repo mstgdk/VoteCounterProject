@@ -1,5 +1,6 @@
 package com.votecounter.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,13 +20,16 @@ public class Party {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 30,nullable = false, unique = true)
+    @Column(length = 30, nullable = false, unique = true)
     private String partyName;
 
 
     @OneToMany(orphanRemoval = true)
-    @JoinColumn(name="party_id")
+    @JoinColumn(name = "party_id")
     private List<ImageFile> image;
+
+    @ManyToOne
+    private Alliance alliance;
 
 
 }

@@ -17,7 +17,7 @@ public class ImageData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //@Lob//büyük objeleri DB de tutacaksam kullanılır.
+    @Lob//büyük objeleri DB de tutacaksam kullanılır.
     private byte[] data;
 
     public ImageData(byte[] data){

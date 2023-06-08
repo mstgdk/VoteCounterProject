@@ -2,6 +2,7 @@ package com.votecounter.controller;
 
 import com.votecounter.domain.Party;
 import com.votecounter.dto.request.PartyCreateRequest;
+import com.votecounter.dto.request.PartyUpdateRequest;
 import com.votecounter.dto.response.PartyResponse;
 import com.votecounter.dto.response.ResponseMessage;
 import com.votecounter.dto.response.VtResponse;
@@ -56,5 +57,19 @@ public class PartyController {
         List<PartyResponse>parties = partyService.getAllParties();
         return ResponseEntity.ok(parties);
     }
-
+    @GetMapping("/getAllWithImage")
+    public ResponseEntity<List<PartyResponse>> getAllPartiesWithImage(){
+        List<PartyResponse>parties = partyService.getAllPartiesWithImage();
+        return ResponseEntity.ok(parties);
+    }
+    // UPDATE
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<VtResponse>updateParty(@PathVariable Long id, @Valid @RequestBody PartyUpdateRequest partyUpdateRequest){
+        partyService.updateParty(id,partyUpdateRequest);
+        VtResponse response = new VtResponse();
+        response.setSuccess(true);
+        response.setMessage(ResponseMessage.PARTY_UPDATED_MESSAGE);
+        return ResponseEntity.ok(response);
+    }
 }

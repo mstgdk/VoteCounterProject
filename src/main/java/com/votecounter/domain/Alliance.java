@@ -1,5 +1,6 @@
 package com.votecounter.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,9 +9,11 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "t_alliance")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -25,7 +28,9 @@ public class Alliance {
     @Column(unique = true)
     private String AllianceName;
 
+
     @OneToMany
+    @JsonIgnore
     @JoinColumn(name = "alliance_Id", referencedColumnName = "id")
-    private Set<Party>partyList;
+    private List<Party> partyList;
 }

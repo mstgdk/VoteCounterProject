@@ -11,6 +11,7 @@ spring:
     username: db_user
     password: db_password
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,7 +19,8 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       '[hibernate.format_sql]': true
-
+  main:
+    allow-circular-references: true
 servlet:
   multipart:
     max-file-size: 2MB

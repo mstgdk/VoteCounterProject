@@ -1,28 +1,39 @@
 package com.votecounter.service;
 
+import com.votecounter.domain.Alliance;
 import com.votecounter.domain.ImageFile;
 import com.votecounter.domain.Party;
 import com.votecounter.dto.request.PartyCreateRequest;
+import com.votecounter.dto.request.PartyUpdateRequest;
 import com.votecounter.dto.response.PartyResponse;
 import com.votecounter.exception.ConflictException;
 import com.votecounter.exception.ResourceNotFoundException;
 import com.votecounter.exception.message.ErrorMessage;
+import com.votecounter.repository.AllianceRepository;
 import com.votecounter.repository.ImageFileRepository;
 import com.votecounter.repository.PartyRepository;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
+@Transactional
 @Service
 public class PartyService {
     private final PartyRepository partyRepository;
     private final ImageFileService imageFileService;
     private final ImageFileRepository imageFileRepository;
+    private final AllianceRepository allianceRepository;
+    private final AllianceService allianceService;
 
-    public PartyService(PartyRepository partyRepository, ImageFileService imageFileService, ImageFileRepository imageFileRepository) {
+
+    public PartyService(PartyRepository partyRepository, ImageFileService imageFileService, ImageFileRepository imageFileRepository, AllianceRepository allianceRepository, @Lazy AllianceService allianceService) {
         this.partyRepository = partyRepository;
         this.imageFileService = imageFileService;
         this.imageFileRepository = imageFileRepository;
+        this.allianceRepository = allianceRepository;
+        this.allianceService = allianceService;
     }
 
 
@@ -95,9 +106,47 @@ public class PartyService {
         PartyResponse dtoParty = new PartyResponse();
         dtoParty.setPartyName(pojoParty.getPartyName());
         dtoParty.setImage(imFiles);
+        //-----Party ye Alliance eklenecek
+       // Alliance alliance = allianceService.
+
         return dtoParty;
     }
 
 
+    public List<PartyResponse> getAllPartiesWithImage() {
+        List<PartyResponse> DTOParties = new ArrayList<>();// Clienta gönderilecek list oluşturdum
+        List<Party> pojoParties = partyRepository.findAll(); // DB den gelecek pojo tipindeki partileri listeledim
+
+        for (Party w : pojoParties) {// DB den gelen partilerin olduğu listten sırayla partileri çağırıp DTO ya çevirdim
+            PartyResponse partyResponse =new PartyResponse();
+            partyResponse.setPartyName(w.getPartyName());
+            ImageFile imageFile = imageFileService.findImageByPartyId(w.getId());
+            List<String>imageID=new ArrayList<>();
+            imageID.add(imageFile.getId());
+            partyResponse.setImage(imageID);
+
+            DTOParties.add(partyResponse);
+        }
+
+
+        return DTOParties;
+    }
+  // updateParty
+    public void updateParty(Long id, PartyUpdateRequest partyUpdateRequest) {
+        Party party = partyRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException(
+                        String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
+        party.setPartyName(partyUpdateRequest.getPartyName());// party nin ismini update ettik
+
+        Alliance alliance = allianceRepository.findAllianceByAllianceName(partyUpdateRequest.getJoinAlliance());
+        party.setAlliance(alliance);
+
+        partyRepository.save(party);
+    }
+    //yardımcı metot
+    public List<Party>parties (Long id){
+        List<Party>partyList=partyRepository.findAllByAllianceId(id);
+        return partyList;
+    }
 
 }
