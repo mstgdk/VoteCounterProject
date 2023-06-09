@@ -18,7 +18,7 @@ public interface PartyRepository extends JpaRepository<Party, Long> {
 
     //@EntityGraph(attributePaths = "alliance_id")
      //@Query("SELECT p from Party p join p.alliance pa where pa.id=:id")
-    //@Query(value = "select * from party where party.alliance_id=:id", nativeQuery = true)
+    @Query(value = "select * from party where party.alliance_id=:id", nativeQuery = true)
     List<Party> findAllByAllianceId(@Param("id") Long id);
 
 

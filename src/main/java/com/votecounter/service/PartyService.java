@@ -137,7 +137,7 @@ public class PartyService {
                 new ResourceNotFoundException(
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
         party.setPartyName(partyUpdateRequest.getPartyName());// party nin ismini update ettik
-
+               // request ile parti ismi gelmezse eskisini setle aksi durumda hata veriyor
         Alliance alliance = allianceRepository.findAllianceByAllianceName(partyUpdateRequest.getJoinAlliance());
         party.setAlliance(alliance);
 

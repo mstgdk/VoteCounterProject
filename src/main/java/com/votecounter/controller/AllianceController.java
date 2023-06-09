@@ -2,6 +2,7 @@ package com.votecounter.controller;
 
 import com.votecounter.dto.request.AllianceRequest;
 import com.votecounter.dto.response.AllianceResponse;
+import com.votecounter.dto.response.AllianceWithPartyListResponse;
 import com.votecounter.dto.response.ResponseMessage;
 import com.votecounter.dto.response.VtResponse;
 import com.votecounter.service.AllianceService;
@@ -30,8 +31,8 @@ public class AllianceController {
     }
    // get An Alliance by Id
     @GetMapping("/{id}")
-    public ResponseEntity<AllianceResponse>getAnAllianceById(@PathVariable Long id){
-        AllianceResponse allianceResponse=allianceService.getAllianceById(id);
+    public ResponseEntity<AllianceWithPartyListResponse>getAnAllianceById(@PathVariable Long id){
+        AllianceWithPartyListResponse allianceResponse=allianceService.getAllianceById(id);
         return ResponseEntity.ok(allianceResponse);
     }
     // get An Alliance with Id

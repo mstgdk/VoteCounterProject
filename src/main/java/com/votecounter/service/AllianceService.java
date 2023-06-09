@@ -4,6 +4,7 @@ import com.votecounter.domain.Alliance;
 import com.votecounter.domain.Party;
 import com.votecounter.dto.request.AllianceRequest;
 import com.votecounter.dto.response.AllianceResponse;
+import com.votecounter.dto.response.AllianceWithPartyListResponse;
 import com.votecounter.dto.response.PartyResponse;
 import com.votecounter.exception.ConflictException;
 import com.votecounter.exception.ResourceNotFoundException;
@@ -45,21 +46,21 @@ public class AllianceService {
 
     }
 
-    public AllianceResponse getAllianceById(Long id) {
+    public AllianceWithPartyListResponse getAllianceById(Long id) {
         Alliance alliance=allianceRepository.findById(id).orElseThrow(()->
                 new ResourceNotFoundException(
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
         //Bussiness Logic: pojo To DTO
-        AllianceResponse allianceResponse = new AllianceResponse();
-        allianceResponse.setId(alliance.getId());
-        allianceResponse.setAllianceName(alliance.getAllianceName());
+        AllianceWithPartyListResponse allianceWithPartyListResponse = new AllianceWithPartyListResponse();
+        allianceWithPartyListResponse.setId(alliance.getId());
+        allianceWithPartyListResponse.setAllianceName(alliance.getAllianceName());
 
         //Alliance a party ekleyeceğiz
 
         List<Party> partyList=partyService.parties(id);
-        //allianceResponse.setPartyList(partyList);
+        allianceWithPartyListResponse.setPartyList(partyList);
 
-        return allianceResponse;
+        return allianceWithPartyListResponse;
         /*
         Could not write JSON: Unable to access lob stream; nested exception is com.fasterxml.jackson.databind.JsonMappingException:
         Unable to access lob stream (through reference chain:
