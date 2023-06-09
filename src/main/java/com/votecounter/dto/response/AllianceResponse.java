@@ -19,5 +19,5 @@ public class AllianceResponse {
     private Long id;
     private String AllianceName;
 
-    private List<Party> partyList;
+    private List<String> partyNamesList;
 }

@@ -4,12 +4,14 @@ import com.votecounter.domain.Alliance;
 import com.votecounter.domain.Party;
 import com.votecounter.dto.request.AllianceRequest;
 import com.votecounter.dto.response.AllianceResponse;
+import com.votecounter.dto.response.PartyResponse;
 import com.votecounter.exception.ConflictException;
 import com.votecounter.exception.ResourceNotFoundException;
 import com.votecounter.exception.message.ErrorMessage;
 import com.votecounter.repository.AllianceRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -55,7 +57,7 @@ public class AllianceService {
         //Alliance a party ekleyeceğiz
 
         List<Party> partyList=partyService.parties(id);
-        allianceResponse.setPartyList(partyList);
+        //allianceResponse.setPartyList(partyList);
 
         return allianceResponse;
         /*
@@ -63,5 +65,26 @@ public class AllianceService {
         Unable to access lob stream (through reference chain:
         com.votecounter.dto.response.AllianceResponse[\"partyList\"]->java.util.ArrayList[0]->com.votecounter.domain.Party[\"image\"])"
          */
+    }
+
+    public AllianceResponse getAllianceWithId(Long id) {
+        Alliance alliance=allianceRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException(
+                        String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
+        //Bussiness Logic: pojo To DTO
+        AllianceResponse allianceResponse = new AllianceResponse();
+        allianceResponse.setId(alliance.getId());
+        allianceResponse.setAllianceName(alliance.getAllianceName());
+
+        //Alliance a party ekleyeceğiz
+
+        List<String> partyList=partyService.getPartyNames(id);
+        List<String>partyNamesList=new ArrayList<>();
+        for (String w : partyList){
+            partyNamesList.add(w);
+        }
+
+        allianceResponse.setPartyNamesList(partyNamesList);
+        return allianceResponse;
     }
 }

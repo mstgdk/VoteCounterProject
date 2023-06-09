@@ -34,4 +34,10 @@ public class AllianceController {
         AllianceResponse allianceResponse=allianceService.getAllianceById(id);
         return ResponseEntity.ok(allianceResponse);
     }
+    // get An Alliance with Id
+    @GetMapping("/alliance/{id}")
+    public ResponseEntity<AllianceResponse>getAnAllianceWithId(@PathVariable Long id){
+        AllianceResponse allianceResponse=allianceService.getAllianceWithId(id);
+        return ResponseEntity.ok(allianceResponse);
+    }
 }

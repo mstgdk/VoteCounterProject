@@ -149,4 +149,8 @@ public class PartyService {
         return partyList;
     }
 
+    public List<String> getPartyNames(Long id) {
+        List<String>partyList=partyRepository.findAllWithAllianceId(id);
+        return partyList;
+    }
 }
