@@ -153,4 +153,11 @@ public class PartyService {
         List<String>partyList=partyRepository.findAllWithAllianceId(id);
         return partyList;
     }
+
+    public Party findById(Long partyId) {
+        Party party = partyRepository.findById(partyId).orElseThrow(()->
+                new ResourceNotFoundException(
+                        String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, partyId)));
+        return party;
+    }
 }
