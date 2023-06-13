@@ -88,4 +88,11 @@ public class AllianceService {
         allianceResponse.setPartyNamesList(partyNamesList);
         return allianceResponse;
     }
+
+    public void deleteAlliance(Long id) {
+        Alliance alliance=allianceRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException(
+                        String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
+        allianceRepository.deleteById(id);
+    }
 }

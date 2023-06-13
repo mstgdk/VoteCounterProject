@@ -18,5 +18,5 @@ public class CandidateResponse {
     private Long id;
     private String firstName;
     private String lastName;
-    private Party party;
+    private String partyName;
 }

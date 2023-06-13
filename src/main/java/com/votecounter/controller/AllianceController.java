@@ -41,4 +41,15 @@ public class AllianceController {
         AllianceResponse allianceResponse=allianceService.getAllianceWithId(id);
         return ResponseEntity.ok(allianceResponse);
     }
+    //Delete Alliance
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<VtResponse>deleteAlliance(@PathVariable Long id){
+        allianceService.deleteAlliance(id);
+
+        VtResponse response = new VtResponse();
+        response.setSuccess(true);
+        response.setMessage(ResponseMessage.ALLIANCE_DELETED_RESPONSE_MESSAGE);
+        return ResponseEntity.ok(response);
+    }
 }

@@ -63,7 +63,7 @@ public class PartyService {
     public List<PartyResponse> getAllParties() {
         List<PartyResponse> DTOParties = new ArrayList<>();// Clienta gönderilecek list oluşturdum
         List<Party> pojoParties = partyRepository.findAll(); // DB den gelecek pojo tipindeki partileri listeledim
-        PartyResponse partyResponse =new PartyResponse();
+        PartyResponse partyResponse = new PartyResponse();
         for (Party w : pojoParties) {// DB den gelen partilerin olduğu listten sırayla partileri çağırıp DTO ya çevirdim
 
             partyResponse.setPartyName(w.getPartyName());
@@ -71,30 +71,31 @@ public class PartyService {
             DTOParties.add(partyResponse);
         }
         //imageFile ları çağırıp yalnızca IDlerini  client a göndereceğim
-        List<PartyResponse>DtoImgFileIDs= new ArrayList<>();
+        List<PartyResponse> DtoImgFileIDs = new ArrayList<>();
         PartyResponse imgFileId = new PartyResponse();
-        List<ImageFile>imgFiles = imageFileRepository.findAll();
-        for (ImageFile x : imgFiles){
+        List<ImageFile> imgFiles = imageFileRepository.findAll();
+        for (ImageFile x : imgFiles) {
             imgFileId.setImage(Collections.singletonList(x.getId()));
             DtoImgFileIDs.add(imgFileId);
         }
         DTOParties.addAll(DtoImgFileIDs);
 
-       return DTOParties;
+        return DTOParties;
     }
-// get a party byId
+
+    // get a party byId
     public PartyResponse getParty(Long id) {
-      Party pojoParty = partyRepository.findById(id).orElseThrow(()->
+        Party pojoParty = partyRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException(
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
 
         PartyResponse DTOParty = new PartyResponse();
         DTOParty.setPartyName(pojoParty.getPartyName());
-                 return DTOParty;
+        return DTOParty;
     }
 
     public PartyResponse getPartyAndImage(Long id) {
-        Party pojoParty = partyRepository.findById(id).orElseThrow(()->
+        Party pojoParty = partyRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException(
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
 
@@ -107,7 +108,7 @@ public class PartyService {
         dtoParty.setPartyName(pojoParty.getPartyName());
         dtoParty.setImage(imFiles);
         //-----Party ye Alliance eklenecek
-       // Alliance alliance = allianceService.
+        // Alliance alliance = allianceService.
 
         return dtoParty;
     }
@@ -118,10 +119,10 @@ public class PartyService {
         List<Party> pojoParties = partyRepository.findAll(); // DB den gelecek pojo tipindeki partileri listeledim
 
         for (Party w : pojoParties) {// DB den gelen partilerin olduğu listten sırayla partileri çağırıp DTO ya çevirdim
-            PartyResponse partyResponse =new PartyResponse();
+            PartyResponse partyResponse = new PartyResponse();
             partyResponse.setPartyName(w.getPartyName());
             ImageFile imageFile = imageFileService.findImageByPartyId(w.getId());
-            List<String>imageID=new ArrayList<>();
+            List<String> imageID = new ArrayList<>();
             imageID.add(imageFile.getId());
             partyResponse.setImage(imageID);
 
@@ -131,31 +132,38 @@ public class PartyService {
 
         return DTOParties;
     }
-  // updateParty
+
+    // updateParty
     public void updateParty(Long id, PartyUpdateRequest partyUpdateRequest) {
-        Party party = partyRepository.findById(id).orElseThrow(()->
+        Party party = partyRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException(
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
-        party.setPartyName(partyUpdateRequest.getPartyName());// party nin ismini update ettik
-               // request ile parti ismi gelmezse eskisini setle aksi durumda hata veriyor
+        if (partyUpdateRequest.getPartyName() == null) {
+            party.setPartyName(party.getPartyName());
+        } else {
+            party.setPartyName(partyUpdateRequest.getPartyName());// party nin ismini update ettik
+        }
+
+
         Alliance alliance = allianceRepository.findAllianceByAllianceName(partyUpdateRequest.getJoinAlliance());
         party.setAlliance(alliance);
 
         partyRepository.save(party);
     }
+
     //yardımcı metot
-    public List<Party>parties (Long id){
-        List<Party>partyList=partyRepository.findAllByAllianceId(id);
+    public List<Party> parties(Long id) {
+        List<Party> partyList = partyRepository.findAllByAllianceId(id);
         return partyList;
     }
 
     public List<String> getPartyNames(Long id) {
-        List<String>partyList=partyRepository.findAllWithAllianceId(id);
+        List<String> partyList = partyRepository.findAllWithAllianceId(id);
         return partyList;
     }
 
     public Party findById(Long partyId) {
-        Party party = partyRepository.findById(partyId).orElseThrow(()->
+        Party party = partyRepository.findById(partyId).orElseThrow(() ->
                 new ResourceNotFoundException(
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, partyId)));
         return party;
