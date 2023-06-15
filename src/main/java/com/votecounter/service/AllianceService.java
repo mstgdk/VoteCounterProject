@@ -95,4 +95,9 @@ public class AllianceService {
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
         allianceRepository.deleteById(id);
     }
+
+//    public Alliance findAllianceByPartyId(Long id) {
+//        Alliance alliance=allianceRepository.findByPartyId(id);
+//        return alliance;
+//    }
 }

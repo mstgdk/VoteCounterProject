@@ -100,7 +100,7 @@ public class PartyService {
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
 
         // Image File
-        ImageFile imageFile = imageFileService.findImageByPartyId(id);
+        ImageFile imageFile = imageFileService.findImageByPartyId(id); //  bir party ye birden fazla image atanınca NoUniqResult hatası veriyor
         List<String> imFiles = new ArrayList<>();
         imFiles.add(imageFile.getId());
         //------------
@@ -108,8 +108,9 @@ public class PartyService {
         dtoParty.setPartyName(pojoParty.getPartyName());
         dtoParty.setImage(imFiles);
         //-----Party ye Alliance eklenecek
-        // Alliance alliance = allianceService.
-
+        Long allianceId = partyRepository.findAllianceId(id);
+        Alliance alliance = allianceRepository.findAllianceById(allianceId);
+        dtoParty.setAlliance(alliance);
         return dtoParty;
     }
 

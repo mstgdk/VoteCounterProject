@@ -52,4 +52,6 @@ public class AllianceController {
         response.setMessage(ResponseMessage.ALLIANCE_DELETED_RESPONSE_MESSAGE);
         return ResponseEntity.ok(response);
     }
+    //get all parties of an Alliance
+
 }

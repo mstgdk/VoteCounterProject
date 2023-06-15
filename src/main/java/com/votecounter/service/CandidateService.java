@@ -47,13 +47,14 @@ public class CandidateService {
         candidateResponse.setId(candidate.getId());
         candidateResponse.setFirstName(candidate.getFirstName());
         candidateResponse.setLastName(candidate.getLastName());
-        if (candidate.getParty().getPartyName()!=null){
+        if (candidate.getParty()!=null){
             candidateResponse.setPartyName(candidate.getParty().getPartyName());
         } else {
-            candidateResponse.setPartyName("This is an independent candidate"); // BU KOD HATA VERİYOR
+            candidateResponse.setPartyName("This is an independent candidate");
         }
 
 
         return candidateResponse;
     }
+
 }
