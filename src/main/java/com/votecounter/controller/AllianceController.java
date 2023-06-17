@@ -70,8 +70,8 @@ public class AllianceController {
         return ResponseEntity.ok(response);
     }
     @GetMapping("/allcandidates/{id}")
-    public ResponseEntity<List<AllCandidatesResponse>>getAllCandidatesBelongToAnAllianceById(@PathVariable Long id){
-        List<Candidate> allCandidates =allianceService.getAllCandidatesBelongToAnAllianceById(id);
+    public ResponseEntity<List<CandidatesOfAlliance>>getAllCandidatesBelongToAnAllianceById(@PathVariable Long id){
+        List<CandidatesOfAlliance> allCandidates =allianceService.getAllCandidatesBelongToAnAllianceById(id);
         return ResponseEntity.ok(allCandidates);
     }
 }

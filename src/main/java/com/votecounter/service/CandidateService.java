@@ -10,6 +10,8 @@ import com.votecounter.exception.message.ErrorMessage;
 import com.votecounter.repository.CandidateRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CandidateService {
     private final CandidateRepository candidateRepository;
@@ -57,4 +59,8 @@ public class CandidateService {
         return candidateResponse;
     }
 
+    public List<Candidate> getAllCandidatedOfAlliance(Long id) {
+        List<Candidate>candidates = candidateRepository.findAllCandidatedOfAlliance(id);
+        return candidates;
+    }
 }

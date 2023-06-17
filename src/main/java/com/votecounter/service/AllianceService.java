@@ -5,6 +5,7 @@ import com.votecounter.domain.Candidate;
 import com.votecounter.dto.request.AllianceRequest;
 import com.votecounter.dto.response.AllCandidatesResponse;
 import com.votecounter.dto.response.AllianceResponse;
+import com.votecounter.dto.response.CandidatesOfAlliance;
 import com.votecounter.exception.ConflictException;
 import com.votecounter.exception.ResourceNotFoundException;
 import com.votecounter.exception.message.ErrorMessage;
@@ -104,9 +105,17 @@ public class AllianceService {
         allianceRepository.save(alliance);
     }
 
-    public List<Candidate> getAllCandidatesBelongToAnAllianceById(Long id) {
+    public List<CandidatesOfAlliance> getAllCandidatesBelongToAnAllianceById(Long id) {
         List<Candidate>candidates=candidateService.getAllCandidatedOfAlliance(id);//buradan candidate service->candidateRepository->Query yazılacak
-
-        return candidates;
+        List<CandidatesOfAlliance>candidatesOfAlliance=new ArrayList<>();
+        for (Candidate w:candidates){
+            CandidatesOfAlliance DTOcandidate = new CandidatesOfAlliance();
+            DTOcandidate.setId(w.getId());
+            DTOcandidate.setFirstName(w.getFirstName());
+            DTOcandidate.setLastName(w.getLastName());
+            DTOcandidate.setPartyName(w.getParty().getPartyName());
+            candidatesOfAlliance.add(DTOcandidate);
+        }
+        return candidatesOfAlliance;
     }
 }
