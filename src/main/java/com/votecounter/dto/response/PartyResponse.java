@@ -19,4 +19,6 @@ public class PartyResponse {
     private String partyName;
     private List<String> image;
     private Alliance alliance;
+    private String allianceMessage;
+
 }

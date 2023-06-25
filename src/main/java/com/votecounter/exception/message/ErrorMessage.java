@@ -2,6 +2,7 @@ package com.votecounter.exception.message;
 
 public class ErrorMessage {
     public final static String RESOURCE_NOT_FOUND_EXCEPTION = "Resource with id %s not found";
+    public final static String ALLIANCE_NOT_FOUND_EXCEPTION = "Party with name %s has no Alliance";
     public final static String JWTTOKEN_ERROR_MESSAGE = "JWT Token Validation Error: %s";
     public final static String ROLE_NOT_FOUND_EXCEPTION = "Role : %s not found";
     public final static String CITNUMBER_ALREADY_EXIST_MESSAGE = "CitNumber: %s already exist";

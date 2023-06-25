@@ -109,8 +109,12 @@ public class PartyService {
         dtoParty.setImage(imFiles);
         //-----Party ye Alliance eklenecek
         Long allianceId = partyRepository.findAllianceId(id);
-        Alliance alliance = allianceRepository.findAllianceById(allianceId);
-        dtoParty.setAlliance(alliance);
+        if (allianceId == null) {
+            dtoParty.setAllianceMessage("This party has no Alliance");
+        } else {
+            Alliance alliance = allianceRepository.findAllianceById(allianceId);
+            dtoParty.setAlliance(alliance);
+        }
         return dtoParty;
     }
 
@@ -126,8 +130,17 @@ public class PartyService {
             List<String> imageID = new ArrayList<>();
             imageID.add(imageFile.getId());
             partyResponse.setImage(imageID);
+            //alliance bilgisi de setlenmeli*******
+            Long allianceId = partyRepository.findAllianceId(w.getId());
+            if (allianceId == null) {
+                partyResponse.setAllianceMessage("This party has no Alliance");
+            } else {
+                Alliance alliance = allianceRepository.findAllianceById(allianceId);
+                partyResponse.setAlliance(alliance);
+            }
 
             DTOParties.add(partyResponse);
+
         }
 
 

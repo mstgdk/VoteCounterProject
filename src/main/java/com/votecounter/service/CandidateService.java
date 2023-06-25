@@ -63,4 +63,21 @@ public class CandidateService {
         List<Candidate>candidates = candidateRepository.findAllCandidatedOfAlliance(id);
         return candidates;
     }
+
+    public void updateCandidate(Long id, CandidateRequest candidateRequest) {
+        Candidate candidate = candidateRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException(String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION,id)));
+    if (candidateRequest.getFirstName()!=null){
+        candidate.setFirstName(candidateRequest.getFirstName());
+    }
+    if (candidateRequest.getLastName()!=null){
+        candidate.setLastName(candidateRequest.getLastName());
+    }
+    if (candidateRequest.getPartyId()!=null){
+        Party party =partyService.findById(candidateRequest.getPartyId());
+        candidate.setParty(party);
+    }
+    candidateRepository.save(candidate);
+    }
+
 }

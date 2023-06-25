@@ -29,7 +29,7 @@ public class PartyController {
     // c = 8a8e8082886942bb018869433f4e0000
     @PostMapping("/admin/{imageId}/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<VtResponse> saveCar(
+    public ResponseEntity<VtResponse> saveParty(
             @PathVariable String imageId, @Valid @RequestBody PartyCreateRequest partyCreateRequest) {
         partyService.saveParty(imageId, partyCreateRequest);
 

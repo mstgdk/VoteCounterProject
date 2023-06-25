@@ -47,4 +47,15 @@ public class CandidateController {
 
           return ResponseEntity.ok(candidateResponse);
     }
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<VtResponse>updateCandidate(@PathVariable Long id, @RequestBody CandidateRequest candidateRequest){
+        candidateService.updateCandidate(id,candidateRequest);
+
+        VtResponse response = new VtResponse();
+        response.setMessage(ResponseMessage.CANDIDATE_UPDATED_MESSAGE);
+        response.setSuccess(true);
+
+        return ResponseEntity.ok(response);
+    }
 }
