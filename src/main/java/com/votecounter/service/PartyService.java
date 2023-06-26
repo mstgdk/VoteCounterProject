@@ -183,13 +183,16 @@ public class PartyService {
         return party;
     }
 
-    public List<PartyResponse> getAlliedPartiesOfAParty(Long id) {
+    public List<String> getAlliedPartiesOfAParty(Long id) {
         Party party = partyRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException(
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
         if (party.getAlliance() == null) {//if the party isn't in an alliance, execution will end.
-            //yeni responsClass oluştur. mesaj gönder: partinin aliance i yok
-            //Fikir.--> allianceId sini bul. yoksa exception atsın
+           throw new ResourceNotFoundException(
+                    String.format(ErrorMessage.ALLIANCE_NOT_FOUND_EXCEPTION, party.getPartyName()));
         }
+        Alliance alliance = party.getAlliance();
+        List<String>partyNames=getPartyNames(alliance.getId());
+        return partyNames;
     }
 }

@@ -72,9 +72,9 @@ public class PartyController {
         response.setMessage(ResponseMessage.PARTY_UPDATED_MESSAGE);
         return ResponseEntity.ok(response);
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<List<PartyResponse>> getAlliedPartiesOfAParty(@PathVariable Long id){
-        List<PartyResponse>parties = partyService.getAlliedPartiesOfAParty(id);
+    @GetMapping("/parties/{id}")// This is the party ID which you want its allied parties
+    public ResponseEntity<List<String>> getAlliedPartiesOfAParty(@PathVariable Long id){
+        List<String>parties = partyService.getAlliedPartiesOfAParty(id);
         return ResponseEntity.ok(parties);
     }
 }
