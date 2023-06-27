@@ -12,5 +12,5 @@ public class ResponseMessage {
 
     public final static String ALLIANCE_DELETED_RESPONSE_MESSAGE = "Alliance Successfully Deleted";
     public final static String ALLIANCE_UPDATED_RESPONSE_MESSAGE = "Alliance Successfully Updated";
-
+    public final static String VOTE_REGISTER_RESPONSE_MESSAGE = "Vote Successfully Registered";
 }
