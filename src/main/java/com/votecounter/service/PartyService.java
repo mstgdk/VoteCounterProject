@@ -195,4 +195,9 @@ public class PartyService {
         List<String>partyNames=getPartyNames(alliance.getId());
         return partyNames;
     }
+//getPartyName
+    public String getPartyName(Long partyId) {
+        String partyNAme=partyRepository.findPartyNameById(partyId);
+        return partyNAme;
+    }
 }

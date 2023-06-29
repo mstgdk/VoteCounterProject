@@ -1,43 +1,368 @@
-2023-06-27 19:01:12,267 INFO  [restartedMain] com.votecounter.VotecounterApplication:Starting VotecounterApplication using Java 18.0.2.1 on DESKTOP-CG3T063 with PID 11816 (C:\Users\Acer\IdeaProjects\votecounter\target\classes started by Acer in C:\Users\Acer\IdeaProjects\votecounter)
-2023-06-27 19:01:12,284 INFO  [restartedMain] com.votecounter.VotecounterApplication:No active profile set, falling back to 1 default profile: "default"
-2023-06-27 19:01:12,524 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-06-27 19:01:12,527 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-06-27 19:01:16,187 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-06-27 19:01:16,467 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 254 ms. Found 7 JPA repository interfaces.
-2023-06-27 19:01:18,378 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
-2023-06-27 19:01:18,400 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
-2023-06-27 19:01:18,404 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.75]
-2023-06-27 19:01:18,667 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
-2023-06-27 19:01:18,667 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 6138 ms
-2023-06-27 19:01:19,601 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-06-27 19:01:19,784 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-06-27 19:01:20,165 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-06-27 19:01:20,429 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
-2023-06-27 19:01:21,170 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
-2023-06-27 19:01:21,213 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-06-27 19:01:21,821 WARN  [restartedMain] org.hibernate.id.UUIDHexGenerator:HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
-2023-06-27 19:01:23,935 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-06-27 19:01:23,965 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-06-27 19:01:26,326 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77049e4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3125c35f, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d3c2cf4, org.springframework.security.web.header.HeaderWriterFilter@34c0d18f, org.springframework.security.web.authentication.logout.LogoutFilter@4db0267d, com.votecounter.security.jwt.AuthTokenFilter@21848b42, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15b4ccb6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39ea910d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7928b811, org.springframework.security.web.session.SessionManagementFilter@19e6ac3d, org.springframework.security.web.access.ExceptionTranslationFilter@2bd8ece9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@662a192c]
-2023-06-27 19:01:26,663 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-06-27 19:01:30,166 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,167 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/v3/api-docs/**']
-2023-06-27 19:01:30,169 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='swagger-ui.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,170 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='swagger-ui.html']
-2023-06-27 19:01:30,170 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,170 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/swagger-ui/**']
-2023-06-27 19:01:30,170 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,171 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/']
-2023-06-27 19:01:30,171 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='index.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,172 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='index.html']
-2023-06-27 19:01:30,173 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,174 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/images/**']
-2023-06-27 19:01:30,174 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,175 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/css/**']
-2023-06-27 19:01:30,176 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-06-27 19:01:30,181 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/js/**']
-2023-06-27 19:01:30,281 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
-2023-06-27 19:01:30,299 INFO  [restartedMain] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 15 endpoint(s) beneath base path '/actuator'
-2023-06-27 19:01:30,530 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
-2023-06-27 19:01:30,582 INFO  [restartedMain] com.votecounter.VotecounterApplication:Started VotecounterApplication in 19.673 seconds (JVM running for 24.053)
-2023-06-27 19:01:31,260 INFO  [RMI TCP Connection(2)-10.14.0.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-29 20:34:05,437 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=22h21m28s993ms780µs800ns).
+2023-06-29 20:35:03,908 ERROR [http-nio-8080-exec-3] com.votecounter.security.jwt.JwtUtils:JWT Token Validation Error: JWT expired at 2023-06-29T18:54:14Z. Current time: 2023-06-29T20:35:03Z, a difference of 6049906 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-06-29 20:35:08,510 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 20:35:08,631 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2023-06-29 20:35:08,795 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
+2023-06-29 20:57:09,540 INFO  [restartedMain] com.votecounter.VotecounterApplication:Starting VotecounterApplication using Java 18.0.2.1 on DESKTOP-CG3T063 with PID 196 (C:\Users\Acer\IdeaProjects\votecounter\target\classes started by Acer in C:\Users\Acer\IdeaProjects\votecounter)
+2023-06-29 20:57:09,544 INFO  [restartedMain] com.votecounter.VotecounterApplication:No active profile set, falling back to 1 default profile: "default"
+2023-06-29 20:57:09,722 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 20:57:09,723 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 20:57:13,579 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 20:57:13,884 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 279 ms. Found 7 JPA repository interfaces.
+2023-06-29 20:57:16,031 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
+2023-06-29 20:57:16,057 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+2023-06-29 20:57:16,059 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-29 20:57:16,367 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+2023-06-29 20:57:16,368 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 6643 ms
+2023-06-29 20:57:17,115 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 20:57:17,264 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-29 20:57:17,740 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 20:57:17,999 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+2023-06-29 20:57:18,476 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+2023-06-29 20:57:18,534 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-29 20:57:19,089 WARN  [restartedMain] org.hibernate.id.UUIDHexGenerator:HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2023-06-29 20:57:21,245 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 20:57:21,282 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 20:57:24,028 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@561a6724, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13f66621, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ef7da49, org.springframework.security.web.header.HeaderWriterFilter@4cf7148, org.springframework.security.web.authentication.logout.LogoutFilter@5eed96e, com.votecounter.security.jwt.AuthTokenFilter@197623de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77748539, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a75b836, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f90d567, org.springframework.security.web.session.SessionManagementFilter@9037012, org.springframework.security.web.access.ExceptionTranslationFilter@6352a310, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@353e02e4]
+2023-06-29 20:57:24,482 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 20:57:28,229 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,230 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/v3/api-docs/**']
+2023-06-29 20:57:28,232 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='swagger-ui.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,232 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='swagger-ui.html']
+2023-06-29 20:57:28,233 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,234 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/swagger-ui/**']
+2023-06-29 20:57:28,234 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,235 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/']
+2023-06-29 20:57:28,235 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='index.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,235 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='index.html']
+2023-06-29 20:57:28,236 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,237 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/images/**']
+2023-06-29 20:57:28,237 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,237 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/css/**']
+2023-06-29 20:57:28,238 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 20:57:28,239 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/js/**']
+2023-06-29 20:57:28,359 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
+2023-06-29 20:57:28,377 INFO  [restartedMain] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-06-29 20:57:28,664 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 20:57:28,713 INFO  [restartedMain] com.votecounter.VotecounterApplication:Started VotecounterApplication in 20.662 seconds (JVM running for 24.462)
+2023-06-29 20:57:41,222 INFO  [http-nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-29 20:58:08,032 WARN  [http-nio-8080-exec-3] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver:Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to access lob stream; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to access lob stream (through reference chain: com.votecounter.dto.response.VoteResponse["winnerParty"]->com.votecounter.domain.Party["image"])]
+2023-06-29 20:58:08,040 WARN  [http-nio-8080-exec-3] org.hibernate.engine.loading.internal.LoadContexts:HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@2490e1f0<rs=HikariProxyResultSet@481858609 wrapping org.postgresql.jdbc.PgResultSet@49bd76f7>
+2023-06-29 20:58:08,047 WARN  [http-nio-8080-exec-3] org.hibernate.engine.loading.internal.CollectionLoadContext:HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [1] entries
+2023-06-29 20:58:26,252 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 20:58:26,293 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2023-06-29 20:58:26,315 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
+2023-06-29 21:05:48,338 INFO  [restartedMain] com.votecounter.VotecounterApplication:Starting VotecounterApplication using Java 18.0.2.1 on DESKTOP-CG3T063 with PID 10668 (C:\Users\Acer\IdeaProjects\votecounter\target\classes started by Acer in C:\Users\Acer\IdeaProjects\votecounter)
+2023-06-29 21:05:48,342 INFO  [restartedMain] com.votecounter.VotecounterApplication:No active profile set, falling back to 1 default profile: "default"
+2023-06-29 21:05:48,491 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 21:05:48,492 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 21:05:51,232 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 21:05:51,430 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 179 ms. Found 7 JPA repository interfaces.
+2023-06-29 21:05:52,970 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
+2023-06-29 21:05:52,993 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+2023-06-29 21:05:52,994 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-29 21:05:53,242 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+2023-06-29 21:05:53,243 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 4750 ms
+2023-06-29 21:05:53,917 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 21:05:54,056 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-29 21:05:54,453 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 21:05:54,773 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+2023-06-29 21:05:55,134 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+2023-06-29 21:05:55,176 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-29 21:05:55,650 WARN  [restartedMain] org.hibernate.id.UUIDHexGenerator:HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2023-06-29 21:05:57,336 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 21:05:57,357 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 21:05:58,513 WARN  [restartedMain] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceController' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\controller\AllianceController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\AllianceService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!
+2023-06-29 21:05:58,517 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 21:05:58,525 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2023-06-29 21:05:58,537 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
+2023-06-29 21:05:58,544 INFO  [restartedMain] org.apache.catalina.core.StandardService:Stopping service [Tomcat]
+2023-06-29 21:05:58,600 INFO  [restartedMain] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-29 21:05:58,678 ERROR [restartedMain] org.springframework.boot.SpringApplication:Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceController' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\controller\AllianceController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\AllianceService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.votecounter.VotecounterApplication.main(VotecounterApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\AllianceService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 50 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:107)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:95)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1061)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:97)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:87)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:87)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:365)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:231)
+	at org.springframework.data.util.Lazy.get(Lazy.java:115)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 61 common frames omitted
+Caused by: java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.party_id=:partyId'!
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.assertParameterNamesInAnnotatedQuery(JpaQueryMethod.java:172)
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:139)
+	at org.springframework.data.jpa.repository.query.DefaultJpaQueryMethodFactory.build(DefaultJpaQueryMethodFactory.java:44)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:93)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:103)
+	... 83 common frames omitted
+2023-06-29 21:11:03,814 INFO  [restartedMain] com.votecounter.VotecounterApplication:Starting VotecounterApplication using Java 18.0.2.1 on DESKTOP-CG3T063 with PID 5528 (C:\Users\Acer\IdeaProjects\votecounter\target\classes started by Acer in C:\Users\Acer\IdeaProjects\votecounter)
+2023-06-29 21:11:03,817 INFO  [restartedMain] com.votecounter.VotecounterApplication:No active profile set, falling back to 1 default profile: "default"
+2023-06-29 21:11:04,107 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 21:11:04,132 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 21:11:08,576 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 21:11:08,886 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 269 ms. Found 7 JPA repository interfaces.
+2023-06-29 21:11:11,486 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
+2023-06-29 21:11:11,530 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+2023-06-29 21:11:11,538 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-29 21:11:11,942 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+2023-06-29 21:11:11,944 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 7810 ms
+2023-06-29 21:11:12,971 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 21:11:13,251 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-29 21:11:13,873 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 21:11:14,233 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+2023-06-29 21:11:14,658 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+2023-06-29 21:11:14,727 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-29 21:11:15,511 WARN  [restartedMain] org.hibernate.id.UUIDHexGenerator:HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2023-06-29 21:11:17,723 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 21:11:17,758 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 21:11:19,455 WARN  [restartedMain] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceController' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\controller\AllianceController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\AllianceService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!
+2023-06-29 21:11:19,458 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 21:11:19,470 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2023-06-29 21:11:19,483 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
+2023-06-29 21:11:19,508 INFO  [restartedMain] org.apache.catalina.core.StandardService:Stopping service [Tomcat]
+2023-06-29 21:11:19,563 INFO  [restartedMain] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-29 21:11:19,665 ERROR [restartedMain] org.springframework.boot.SpringApplication:Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceController' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\controller\AllianceController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\AllianceService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.votecounter.VotecounterApplication.main(VotecounterApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'allianceService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\AllianceService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'partyService' defined in file [C:\Users\Acer\IdeaProjects\votecounter\target\classes\com\votecounter\service\PartyService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'partyRepository' defined in com.votecounter.repository.PartyRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 50 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long); Reason: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:107)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:95)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1061)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:97)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:87)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:87)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:365)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:231)
+	at org.springframework.data.util.Lazy.get(Lazy.java:115)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 61 common frames omitted
+Caused by: java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.String com.votecounter.repository.PartyRepository.findPartyNameById(java.lang.Long) but parameter 'Optional[id]' not found in annotated query 'select party_name from party where party.id=:partyId'!
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.assertParameterNamesInAnnotatedQuery(JpaQueryMethod.java:172)
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:139)
+	at org.springframework.data.jpa.repository.query.DefaultJpaQueryMethodFactory.build(DefaultJpaQueryMethodFactory.java:44)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:93)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:103)
+	... 83 common frames omitted
+2023-06-29 21:13:00,703 INFO  [restartedMain] com.votecounter.VotecounterApplication:Starting VotecounterApplication using Java 18.0.2.1 on DESKTOP-CG3T063 with PID 836 (C:\Users\Acer\IdeaProjects\votecounter\target\classes started by Acer in C:\Users\Acer\IdeaProjects\votecounter)
+2023-06-29 21:13:00,715 INFO  [restartedMain] com.votecounter.VotecounterApplication:No active profile set, falling back to 1 default profile: "default"
+2023-06-29 21:13:01,114 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-29 21:13:01,115 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-29 21:13:05,551 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-29 21:13:06,154 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 553 ms. Found 7 JPA repository interfaces.
+2023-06-29 21:13:11,536 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
+2023-06-29 21:13:11,604 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+2023-06-29 21:13:11,610 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-29 21:13:12,643 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+2023-06-29 21:13:12,646 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 11529 ms
+2023-06-29 21:13:15,685 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-29 21:13:16,094 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-29 21:13:17,413 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-29 21:13:18,247 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+2023-06-29 21:13:18,675 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+2023-06-29 21:13:18,734 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-29 21:13:19,512 WARN  [restartedMain] org.hibernate.id.UUIDHexGenerator:HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2023-06-29 21:13:21,953 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-29 21:13:21,982 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 21:13:25,053 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7156d9f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d820ffd, org.springframework.security.web.context.SecurityContextPersistenceFilter@19e6ac3d, org.springframework.security.web.header.HeaderWriterFilter@6f024616, org.springframework.security.web.authentication.logout.LogoutFilter@113472e1, com.votecounter.security.jwt.AuthTokenFilter@583be953, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@751b2d20, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d3c2cf4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@429c5cbe, org.springframework.security.web.session.SessionManagementFilter@4e3f7ca2, org.springframework.security.web.access.ExceptionTranslationFilter@13f6ec4e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7928b811]
+2023-06-29 21:13:25,681 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-29 21:13:30,422 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,423 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/v3/api-docs/**']
+2023-06-29 21:13:30,424 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='swagger-ui.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,425 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='swagger-ui.html']
+2023-06-29 21:13:30,426 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,426 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/swagger-ui/**']
+2023-06-29 21:13:30,427 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,427 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/']
+2023-06-29 21:13:30,427 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='index.html']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,428 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='index.html']
+2023-06-29 21:13:30,428 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,429 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/images/**']
+2023-06-29 21:13:30,429 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/css/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,429 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/css/**']
+2023-06-29 21:13:30,430 WARN  [restartedMain] org.springframework.security.config.annotation.web.builders.WebSecurity:You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-06-29 21:13:30,431 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will not secure Ant [pattern='/js/**']
+2023-06-29 21:13:30,592 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
+2023-06-29 21:13:30,616 INFO  [restartedMain] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-06-29 21:13:31,041 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-29 21:13:31,102 INFO  [restartedMain] com.votecounter.VotecounterApplication:Started VotecounterApplication in 31.906 seconds (JVM running for 35.242)
+2023-06-29 21:13:31,583 INFO  [RMI TCP Connection(6)-10.14.0.2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-29 21:16:30,919 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-29 21:16:30,934 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2023-06-29 21:16:30,988 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
