@@ -30,4 +30,6 @@ public interface PartyRepository extends JpaRepository<Party, Long> {
     Long findAllianceId(@Param("id") Long id);
     @Query(value = "select party_name from party where party.id=:id", nativeQuery = true)
     String findPartyNameById(@Param("id") Long partyId);
+    @Query(value = "select alliance_id from party where party.id=:id", nativeQuery = true)
+    Long getAllianceIdByPartyId(@Param("id") Long partyId);
 }

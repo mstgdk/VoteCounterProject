@@ -14,6 +14,5 @@ public interface AllianceRepository extends JpaRepository<Alliance, Long> {
     @Query(value = "select * from t_alliance where t_alliance.id=:id", nativeQuery = true)
     Alliance findAllianceById(@Param("id") Long allianceId);
 
-    /*@Query(value = "select * from t_alliance where t_alliance.id=:id", nativeQuery = true)
-    Alliance findByPartyId(@Param("id") Long id);*/
+
 }

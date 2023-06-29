@@ -38,36 +38,10 @@ public class AllianceService {
             );
         }
 
-
-
        Alliance alliance = new Alliance();
         alliance.setAllianceName(allianceRequest.getAllianceName());
         allianceRepository.save(alliance);
-
     }
-
-//    public AllianceWithPartyListResponse getAllianceById(Long id) {
-//        Alliance alliance=allianceRepository.findById(id).orElseThrow(()->
-//                new ResourceNotFoundException(
-//                        String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
-//        //Bussiness Logic: pojo To DTO
-//        AllianceWithPartyListResponse allianceWithPartyListResponse = new AllianceWithPartyListResponse();
-//        allianceWithPartyListResponse.setId(alliance.getId());
-//        allianceWithPartyListResponse.setAllianceName(alliance.getAllianceName());
-//
-//        //Alliance a party ekleyeceğiz
-//
-//        List<Party> partyList=partyService.parties(id);
-//        allianceWithPartyListResponse.setPartyList(partyList);
-//
-//        return allianceWithPartyListResponse;
-//        /*
-//        Could not write JSON: Unable to access lob stream; nested exception is com.fasterxml.jackson.databind.JsonMappingException:
-//        Unable to access lob stream (through reference chain:
-//        com.votecounter.dto.response.AllianceResponse[\"partyList\"]->java.util.ArrayList[0]->com.votecounter.domain.Party[\"image\"])"
-//         */
-//    }
-
     public AllianceResponse getAllianceWithId(Long id) {
         Alliance alliance=allianceRepository.findById(id).orElseThrow(()->
                 new ResourceNotFoundException(
@@ -95,8 +69,6 @@ public class AllianceService {
                         String.format(ErrorMessage.RESOURCE_NOT_FOUND_EXCEPTION, id)));
         allianceRepository.deleteById(id);
     }
-
-
     public void updateAlliance(Long id, AllianceRequest allianceRequest) {
         Alliance alliance=allianceRepository.findById(id).orElseThrow(()->
                 new ResourceNotFoundException(
@@ -104,7 +76,6 @@ public class AllianceService {
         alliance.setAllianceName(allianceRequest.getAllianceName());
         allianceRepository.save(alliance);
     }
-
     public List<CandidatesOfAlliance> getAllCandidatesBelongToAnAllianceById(Long id) {
         List<Candidate>candidates=candidateService.getAllCandidatedOfAlliance(id);//buradan candidate service->candidateRepository->Query yazılacak
         List<CandidatesOfAlliance>candidatesOfAlliance=new ArrayList<>();
@@ -118,4 +89,5 @@ public class AllianceService {
         }
         return candidatesOfAlliance;
     }
+
 }

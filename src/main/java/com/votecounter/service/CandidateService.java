@@ -80,4 +80,8 @@ public class CandidateService {
     candidateRepository.save(candidate);
     }
 
+    public Candidate getCandidateByPartyId(Long partyId) {
+        Candidate winnerCandidate = candidateRepository.getCandidateByPartyId(partyId);
+        return winnerCandidate;
+    }
 }

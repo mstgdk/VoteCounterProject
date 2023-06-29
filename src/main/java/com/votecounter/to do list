@@ -1,0 +1,6 @@
+//bir partinin 1 candidate i olmalı
+
+//winnerCandidate failed!!!!!!!!
+"message": "Could not write JSON: Unable to access lob stream; nested exception is com.fasterxml.jackson.databind.JsonMappingException:
+Unable to access lob stream (through reference chain: com.votecounter.dto.response.VoteResponse[\"winnerCandidate\"]->
+com.votecounter.domain.Candidate[\"party\"]->com.votecounter.domain.Party[\"image\"])",
