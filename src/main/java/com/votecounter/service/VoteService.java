@@ -59,11 +59,12 @@ public class VoteService {
         // winnerCandidate
         Candidate winnerCandidate = candidateService.getCandidateByPartyId(party_id);
         voteResponse.setWinnerCandidate(winnerCandidate);
-        //numOfVotesOfWinnerAlliance
-        // numOfVotesOfWinnerCandidate
         // numOfVotesOfWinnerParty
-
-
+        int numOfVotesOfWinnerParty = voteRepository.numOfVotesOfWinnerParty();
+        voteResponse.setNumOfVotesOfWinnerParty(numOfVotesOfWinnerParty);
+        //numOfVotesOfWinnerAlliance
+        int numOfVotesOfWinnerAlliance=voteRepository.numOfVotesOfWinnerAlliance();
+        voteResponse.setNumOfVotesOfWinnerAlliance(numOfVotesOfWinnerAlliance);
 
 
 

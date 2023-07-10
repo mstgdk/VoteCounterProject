@@ -15,7 +15,6 @@ import lombok.Setter;
 public class VoteResponse {
     private int totalNumberOfVotes;
     private Candidate winnerCandidate;
-    private int NumOfVotesOfWinnerCandidate;
     private String winnerParty;
     private int NumOfVotesOfWinnerParty;
     private Alliance winnerAlliance;

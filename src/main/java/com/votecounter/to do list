@@ -1,4 +1,4 @@
-//bir partinin 1 candidate i olmalı
+
 
 //winnerCandidate failed!!!!!!!!
 "message": "Could not write JSON: Unable to access lob stream; nested exception is com.fasterxml.jackson.databind.JsonMappingException:

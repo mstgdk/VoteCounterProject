@@ -10,4 +10,5 @@ public class ErrorMessage {
     public final static String IMAGE_NOT_FOUND_MESSAGE = "ImageFile with id %s not found";
     public final static String IMAGE_USED_MESSAGE = "ImageFile is used by another party";
     public final static String THIS_ALLIANCE_NAME_ALREADY_EXIST_MESSAGE = "This Alliance Name is used by another alliance";
+    public final static String PARTY_AND_CANDIDATE_CONFLICT_EXCEPTION = "This Party with id %s has already a CANDIDATE. You can't be a candidate of this party..";
 }

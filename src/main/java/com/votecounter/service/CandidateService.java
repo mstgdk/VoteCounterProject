@@ -5,6 +5,7 @@ import com.votecounter.domain.Party;
 import com.votecounter.dto.request.CandidateRequest;
 import com.votecounter.dto.response.CandidateResponse;
 import com.votecounter.dto.response.ResponseMessage;
+import com.votecounter.exception.ConflictException;
 import com.votecounter.exception.ResourceNotFoundException;
 import com.votecounter.exception.message.ErrorMessage;
 import com.votecounter.repository.CandidateRepository;
@@ -27,8 +28,13 @@ public class CandidateService {
         candidate.setFirstName(candidateRequest.getFirstName());
         candidate.setLastName(candidateRequest.getLastName());
         if (candidateRequest.getPartyId()!=null){
-            Party party =partyService.findById(candidateRequest.getPartyId());
-            candidate.setParty(party);
+           Candidate isThereCandidate = candidateRepository.isExistsCandidateByPartyId(candidateRequest.getPartyId());
+            if (isThereCandidate==null){
+                Party party =partyService.findById(candidateRequest.getPartyId());
+                candidate.setParty(party);
+            }else{
+                throw new ConflictException(String.format(ErrorMessage.PARTY_AND_CANDIDATE_CONFLICT_EXCEPTION,candidateRequest.getPartyId()));
+            }
         }
         candidateRepository.save(candidate);
     }
@@ -84,4 +90,10 @@ public class CandidateService {
         Candidate winnerCandidate = candidateRepository.getCandidateByPartyId(partyId);
         return winnerCandidate;
     }
+    //Asistant method
+    /*public Boolean isExistsCandidateByPartyId(Long partyId){
+        Boolean isExistCandidate = candidateRepository.isExistsCandidateByPartyId(partyId);
+        return isExistCandidate;
+    }*/
+
 }

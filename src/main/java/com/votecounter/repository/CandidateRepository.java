@@ -18,6 +18,9 @@ public interface CandidateRepository extends JpaRepository<Candidate,Long> {
     @Query("select c from Candidate c where c.party.id=:id")
    // @Query(value = "select * from candidate where party_id=:id", nativeQuery = true)
     Candidate getCandidateByPartyId(@Param("id") Long partyId);
+
+    @Query(value = "select c from Candidate  c where c.party.id=:partyId")
+    Candidate isExistsCandidateByPartyId(@Param("partyId") Long partyId);
 }
 /*
 "message": "org.hibernate.QueryException: Space is not allowed after parameter
